@@ -64,7 +64,8 @@ void loop() {
   // и определить направления движения
   int distance;
   // замер расстояния
-  distance = measureDistance();
+  distance = (measureDistance() + measureDistance() + measureDistance()) /3 ;
+//  distance = measureDistance();
   if (debug > 1) {
     Serial.print("distance = "); Serial.println(distance);
   }
@@ -264,7 +265,7 @@ void motorSetSpeed(int speed)  {
 
 int radar()
 {
-  if (RADAR_PREV_DIRECTION = 1) {
+  if (RADAR_PREV_DIRECTION == 1) {
   for (int pos = 70; pos <= 130; pos += 1)
   {
     servo.write(pos);
